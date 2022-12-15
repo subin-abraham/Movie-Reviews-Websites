@@ -1,0 +1,21 @@
+
+<div class="loginContainer">
+  <form action="" [formGroup]="userLoginDetails" (ngSubmit)="login()">
+    <div class="form-container ">
+      <h1 id="loginText" class="p-5">Login</h1>
+      <section id="loginInput" >
+        <input class="form-control text-center" formControlName="userName" id="loginPageUserName" type="text" name="username" placeholder="Username">
+        <br>
+        <input class="form-control text-center" formControlName="password" id="loginPageUserPassword" type="password" name="password"
+          placeholder="Password">
+        <br>
+        <div style="margin-left: -60px;">
+          <button class="btn btn-success w-50" style="height: 47px;" type="submit">Login</button>
+  
+          <p class="mt-5">New User? <a routerLink="register">Register Now </a></p>
+        </div>
+  
+      </section>
+    </div>
+  </form>
+</div>

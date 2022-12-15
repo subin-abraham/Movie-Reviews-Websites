@@ -1,0 +1,15 @@
+<form action="" [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="form-container">
+        <h1>Register</h1>
+        <section>
+          <input formControlName="userName" id="registrationPageUserName" type="text" name="username" placeholder="Username">
+          <br>
+          <input formControlName="password"  id="registrationPageUserPassword" type="password" name="password"
+            placeholder="Password">
+          <br>
+          <button type="submit">Register</button>
+    
+        </section>
+      </div>
+    
+</form>
