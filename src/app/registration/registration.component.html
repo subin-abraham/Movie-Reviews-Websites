@@ -1,15 +1,17 @@
-<form action="" [formGroup]="registerForm" (ngSubmit)="register()">
+<div class="loginContainer">
+  <form action="" [formGroup]="registerForm" (ngSubmit)="register()">
     <div class="form-container">
-        <h1>Register</h1>
-        <section>
-          <input formControlName="userName" id="registrationPageUserName" type="text" name="username" placeholder="Username">
+        <h1 id="loginText">Register</h1>
+        <section id="loginInput" >
+          <input class="form-control text-center" formControlName="userName" id="registrationPageUserName" type="text" name="username" placeholder="Username">
           <br>
-          <input formControlName="password"  id="registrationPageUserPassword" type="password" name="password"
+          <input class="form-control text-center" formControlName="password"  id="registrationPageUserPassword" type="password" name="password"
             placeholder="Password">
           <br>
-          <button type="submit">Register</button>
+          <button class="btn btn-success w-50" style="height: 47px;" type="submit">Register</button>
     
         </section>
       </div>
     
 </form>
+</div>
