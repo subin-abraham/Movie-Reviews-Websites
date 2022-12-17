@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit {
   trendingMovies: any
   popularMovies: any
-  theatresmovies:any
+  theatresmovies: any
 
   constructor(private router: Router, private http: HttpClient) { }
 
@@ -20,25 +20,28 @@ export class HomeComponent implements OnInit {
     this.getPopularMovies();
   }
   getTrendingMovies() {
-    this.http.get('http://localhost:4200/assets/Data/trending-movies.json').subscribe((movies) => 
-    { this.trendingMovies = movies; 
-    console.log(this.trendingMovies);
+    this.http.get('http://localhost:4200/assets/Data/trending-movies.json').subscribe((movies) => {
+      this.trendingMovies = movies;
+      console.log(this.trendingMovies);
     });
 
-  } 
+  }
 
   getTheatresMovies() {
-    this.http.get('http://localhost:4200/assets/Data/theatre-movies.json').subscribe((movies) => 
-    { this.theatresmovies = movies; 
-    console.log(this.theatresmovies);
+    this.http.get('http://localhost:4200/assets/Data/theatre-movies.json').subscribe((movies) => {
+      this.theatresmovies = movies;
+      console.log(this.theatresmovies);
     });
 
   }
   getPopularMovies() {
-    this.http.get('http://localhost:4200/assets/Data/popular-movies.json').subscribe((movies) => 
-    { this.popularMovies = movies; 
-    console.log(this.popularMovies);
+    this.http.get('http://localhost:4200/assets/Data/popular-movies.json').subscribe((movies) => {
+      this.popularMovies = movies;
+      console.log(this.popularMovies);
     });
 
+  }
+  goToMovie(type: string, id: string) {
+    this.router.navigate(['movie' , type, id]);
   }
 }

@@ -1,1 +1,48 @@
-<p>movie works!</p>
+<app-header></app-header>
+<div class="movie-container">
+    <div class="top">
+        <div class="left">
+            <div class="name">{{movie?.name}}</div>
+            <div class="rating">Rating : {{movie?.rating}}</div>
+            <div class="cover">
+                <img [src]="movie?.cover" alt="">
+            </div>
+        </div>
+        <div class="right">
+            <div class="title">
+                <div class="formGroup">
+                    <label for="uName">Name</label>
+                    <input type="text" name="uName" class="form-control">
+                </div>
+                <div class="formGroup">
+                    <label for="review">Review</label>
+                    <textarea name="review" rows="3" class="form-control"></textarea>
+                </div>
+                <div class="btn-container">
+                    <button class="btn btn-dark">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <h4 class="title">Review</h4>
+        <div class="reviews" *ngIf="movie?.reviews?.length>0">
+            <div class="review" *ngFor="let review of movie?.reviews">
+                <div class="reviewDetails">
+                    <div class="reviewLeft">
+                        <div class="author">{{review.author}}</div>
+                        <div class="authorDt">{{review.published_on}}</div>
+                    </div>
+                    <div class="reviewLeft"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="reviews">
+            <div class="noReviews" *ngIf="movie?.reviews?.length===0">No reviews yet</div>
+
+        </div>
+
+
+    </div>
+</div>

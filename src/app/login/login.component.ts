@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
     if(this.userLoginDetails.valid){
       const result = this.data.login(userName, password)
       if (result) {
-        alert('login success')
         this.router.navigateByUrl('home')
       }
   
